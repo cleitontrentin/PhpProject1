@@ -59,7 +59,7 @@
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <label>Endereço</label>
-                                <input class="form-control" placeholder="Informe seu endereço completo" type="text" id="txtRua" name="txtEndereco">
+                                <input class="form-control" placeholder="Informe seu endereço completo" type="text" id="txtEndereco" name="txtEndereco">
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -73,7 +73,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Desativado</label>
-                                <input class="form-control" placeholder="Innforme se o clientente é ativo" type="text" id="txtComplemento" name="txtDesativado">
+                                <input class="form-control" placeholder="Innforme se o clientente é ativo" type="text" id="txtDesativado" name="txtDesativado">
                             </div>
                         </div>
                       

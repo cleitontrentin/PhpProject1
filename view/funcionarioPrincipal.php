@@ -1,6 +1,6 @@
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Funcionário</h1>
+                    <h1 class="page-header">Funcionario</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -17,10 +17,10 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-table fa-fw"></i> Lista de funcionário
+                            <i class="fa fa-table fa-fw"></i> Lista de funcionario
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body" id="ListaFuncionario" name="ListaFuncionario">
+                        <div class="panel-body" id="ListaFuncionario" name="listaFuncionario">
                         
                         </div>
                         <!-- /.panel-body -->
@@ -41,7 +41,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-edit fa-fw"></i> Cadastro de funcionário
+                            <i class="fa fa-edit fa-fw"></i> Cadastro de funcionario
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

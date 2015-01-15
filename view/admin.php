@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="admin.php">Área restrita</a>
+                <a class="navbar-brand" href="admin.php">Entrar</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -66,15 +66,10 @@
                             <a href="admin.php"><i class="fa fa-table fa-fw"></i> Principal</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Operação <span class="fa arrow"></span></a>
-                           
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastros Principais<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a class="linkForm" id="cliente" href="#">Cliente</a></li>
-                                <li><a class="linkForm" id="funcionario" href="#">Funcionário</a></li>
+                                <li><a class="linkForm" id="cliente" href="clientePrincipal.php">Cliente</a></li>
+                                <li><a class="linkForm" id="funcionario" href="funcionarioPrincipal.php">Funcionário</a></li>
                                 <li><a class="linkForm" id="funcionario" href="#">Ordem de Serviço</a></li>
                            
                             <!-- /.nav-second-level -->
@@ -125,20 +120,7 @@
 					alert("Error: "+xhr.status+": "+xhr.statusText);
 			});
 		});	
-/*
-		$("#detalheUsuario").click(function(){
-			$("#conteudoForm").load("../controller/ctrlReceiveForm.php" ,{
-					//variaveis de controle
-					txtFormulario: 'funcionario'
-					, txtAcao: 'detalhe'
-					//variaveis para o objeto
-					, txtIdFuncionario: '<? //$sIdFuncionario ?>'
-				}, function(responseTxt,statusTxt,xhr){
-				if(statusTxt=="error")
-					alert("Error: "+xhr.status+": "+xhr.statusText);
-			});
-		});	
-		*/
+
     </script>
 
 

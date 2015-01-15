@@ -9,10 +9,10 @@
                 </tr>
             </thead>
             <tbody>
-<?php
-			while ($_array = mysql_fetch_assoc($result))
-			{
-?>	
+//<?php
+//			while ($_array = mysql_fetch_assoc($result))
+//			{
+//?>	
                 <tr class="odd gradeX">
                     <td><?=$_array['IDFUNCIONARIO']?></td>
                     <td><?=$_array['NOME']?></td>
@@ -27,9 +27,9 @@
                         </a>
                     </td>
 			    </tr>
-<?php
-			}
-?>
+//<?php
+////			}
+//?>
 		    </tbody>
     	</table>
     
