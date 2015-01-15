@@ -14,77 +14,78 @@
 class OrdemServico {
     //put your code here
     private $idOrdemServico;
-    private $idFuncionario = Funcionario;
-    private $idCliente = Cliente;
+    private $idFuncionario;
+    private $idCliente;
     private $dtAbertura;
     private $dtFechamento;
     private $servico;
     private $status;
     private $desativado;
     
-    function getIdOrdemServico() {
+    public function getIdOrdemServico() {
         return $this->idOrdemServico;
     }
 
-    function getIdFuncionario() {
+    public function getIdFuncionario() {
         return $this->idFuncionario;
     }
 
-    function getIdCliente() {
+    public function getIdCliente() {
         return $this->idCliente;
     }
 
-    function getDtAbertura() {
+    public function getDtAbertura() {
         return $this->dtAbertura;
     }
 
-    function getDtFechamento() {
+    public function getDtFechamento() {
         return $this->dtFechamento;
     }
 
-    function getServico() {
+    public function getServico() {
         return $this->servico;
     }
 
-    function getStatus() {
+    public function getStatus() {
         return $this->status;
     }
 
-    function getDesativado() {
+    public function getDesativado() {
         return $this->desativado;
     }
 
-    function setIdOrdemServico($idOrdemServico) {
+    public function setIdOrdemServico($idOrdemServico) {
         $this->idOrdemServico = $idOrdemServico;
     }
 
-    function setIdFuncionario($idFuncionario) {
+    public function setIdFuncionario($idFuncionario) {
         $this->idFuncionario = $idFuncionario;
     }
 
-    function setIdCliente($idCliente) {
+    public function setIdCliente($idCliente) {
         $this->idCliente = $idCliente;
     }
 
-    function setDtAbertura($dtAbertura) {
+    public function setDtAbertura($dtAbertura) {
         $this->dtAbertura = $dtAbertura;
     }
 
-    function setDtFechamento($dtFechamento) {
+    public function setDtFechamento($dtFechamento) {
         $this->dtFechamento = $dtFechamento;
     }
 
-    function setServico($servico) {
+    public function setServico($servico) {
         $this->servico = $servico;
     }
 
-    function setStatus($status) {
+    public function setStatus($status) {
         $this->status = $status;
     }
 
-    function setDesativado($desativado) {
+    public function setDesativado($desativado) {
         $this->desativado = $desativado;
     }
+
 
 
 }
