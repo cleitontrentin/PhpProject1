@@ -50,16 +50,16 @@ class CtrlSendForm
 
 
 
-//
-//	public function mostraAlertMsg($tipo, $titulo, $texto, $formulario, $acao)
-//	{
-//		require("../view/mensagemAlerta.php");
-//	}
-//	
-//	public function mostraMsg($tipo, $titulo, $texto)
-//	{
-//		require("../view/mensagem.php");
-//	}	
+
+	public function mostraAlertMsg($tipo, $titulo, $texto, $formulario, $acao)
+	{
+		require("../view/mensagemAlerta.php");
+	}
+	
+	public function mostraMsg($tipo, $titulo, $texto)
+	{
+		require("../view/mensagem.php");
+	}	
 	
 }
 ?>

@@ -1,8 +1,8 @@
 <?php
 //importanto a classe Model
-include_once("../model/cliente.class.php");
+include_once("../model/Cliente.php");
 //importanto a classe DAO
-include_once("../model/dao/daoCliente.class.php");
+include_once("../model/dao/daoCliente.php");
 
 /*Definição da Classe*/
 class CtrlCliente

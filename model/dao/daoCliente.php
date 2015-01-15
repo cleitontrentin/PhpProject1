@@ -1,7 +1,7 @@
 <?php
 
 /* incluindo o arquivo com as configurações do BD */
-include_once("./conexao.php");
+include_once('conexao.php');
 
 /* Classe de acesso a dados do Funcionario */
 

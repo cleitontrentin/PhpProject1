@@ -1,8 +1,8 @@
 <?php
 //importanto a classe Model
-include_once("../model/funcionario.class.php");
+include_once("../model/Funcionario.php");
 //importanto a classe DAO
-include_once("../model/dao/daoFuncionario.class.php");
+include_once("../model/dao/daoFuncionario.php");
 
 /*Definição da Classe*/
 class CtrlFuncionario
