@@ -49,7 +49,7 @@
                         <li><a href="#" id="detalheUsuario"><i class="fa fa-user fa-fw"></i> <?=$sLogin?> </a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="../view/logoff.php"><i class="fa fa-sign-out fa-fw"></i> Sair </a>
+                        <li><a href="../view/index.php"><i class="fa fa-sign-out fa-fw"></i> Sair </a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -65,11 +65,12 @@
                         <li>
                             <a href="admin.php"><i class="fa fa-table fa-fw"></i> Principal</a>
                         </li>
+ 
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastros Principais<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a class="linkForm" id="cliente" href="clientePrincipal.php">Cliente</a></li>
-                                <li><a class="linkForm" id="funcionario" href="funcionarioPrincipal.php">Funcionário</a></li>
+                                <li><a class="linkForm" id="cliente" href="#">Cliente</a></li>
+                                <li><a class="linkForm" id="funcionario" href="#">Funcionário</a></li>
                                 <li><a class="linkForm" id="funcionario" href="#">Ordem de Serviço</a></li>
                            
                             <!-- /.nav-second-level -->
