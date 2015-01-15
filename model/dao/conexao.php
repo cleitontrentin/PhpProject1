@@ -19,16 +19,16 @@ if (!$conn) {
 ?>
 
 <?php
-//include_once ("./conexao.php");
-//
-//$SQL = "SELECT * FROM funcionario";
-//$Requisicao  = mysql_query($SQL);
-//while($RF = mysql_fetch_array($Requisicao))
-//{
-//    echo '<pre>';
-//    print_r($RF);
-//    echo '</pre>';
-//}
+include_once ("./conexao.php");
+
+$SQL = "SELECT * FROM funcionario";
+$Requisicao  = mysql_query($SQL);
+while($RF = mysql_fetch_array($Requisicao))
+{
+    echo '<pre>';
+    print_r($RF);
+    echo '</pre>';
+}
 
 
 ?>

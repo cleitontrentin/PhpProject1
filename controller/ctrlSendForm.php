@@ -8,11 +8,17 @@ class CtrlSendForm
 	
 	public function MostraTela($model, $result=null, $Objects=null){
 	
-		$acao = htmlspecialchars($_REQUEST ['txtAcao']);
-		$pagina = "../cliente/";
+		$acao = $_POST->$dirh = opendir($dirname);
+                if ($dirh) {
+                    while (($dirElement = readdir($dirh)) !== false) {
+                        
+                    }
+                    closedir($dirh);
+                }($_REQUEST ['txtAcao']);
+		$pagina = "../view/";
 
 		/*Identificado o objeto */
-		if ($model instanceof Cliente){
+		if ($model instanceof cliente){
 			$pagina = $pagina . "cliente";
 		}elseif ($model instanceof Funcionario){
 			$pagina = $pagina . "funcionario";

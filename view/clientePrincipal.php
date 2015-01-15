@@ -1,3 +1,26 @@
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Cleitne</title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="../include/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../include/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Page-Level Plugin CSS - Tables -->
+    <link href="../include/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">    
+    <!-- Page-Level Plugin CSS - Dashboard -->
+    <link href="../include/css/plugins/timeline/timeline.css" rel="stylesheet">
+    <!-- SB Admin CSS - Include with every page -->
+    <link href="../include/css/sb-admin.css" rel="stylesheet">
+    
+    <script src="../include/js/jquery-1.10.2.js" type="text/javascript"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Cliente</h1>

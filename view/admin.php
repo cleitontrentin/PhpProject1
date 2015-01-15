@@ -69,7 +69,7 @@
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastros Principais<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a class="linkForm" id="cliente" href="#">Cliente</a></li>
+                                <li><a class="linkForm" id="cliente" href="../view/clientePrincipal.php">Cliente</a></li>
                                 <li><a class="linkForm" id="funcionario" href="#">Funcionário</a></li>
                                 <li><a class="linkForm" id="funcionario" href="#">Ordem de Serviço</a></li>
                            
