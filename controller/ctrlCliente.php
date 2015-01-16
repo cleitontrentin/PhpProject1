@@ -27,10 +27,10 @@ class CtrlCliente
 	
 		/*Pegando os campos do formulário e colocando no model*/
 		$objCliente->setIdCliente($this->Verifica('txtIdCliente'));
-		$objCliente->setNome($this->Verifica('txtNome'));
+		$objCliente->setNomeCliente($this->Verifica('txtNome'));
 		$objCliente->setEndereco($this->Verifica('txtEndereco'));
 		$objCliente->setTelefone($this->Verifica('txtTelefone'));
-		$objCliente->setDesativado($this->Verifica('txtDesativado'));
+		//$objCliente->setDesativado($this->Verifica('txtDesativado'));
 	
 		
 	}

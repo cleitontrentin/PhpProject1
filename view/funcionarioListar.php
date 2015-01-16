@@ -9,14 +9,14 @@
                 </tr>
             </thead>
             <tbody>
-//<?php
-//			while ($_array = mysql_fetch_assoc($result))
-//			{
-//?>	
+<?php
+			while ($_array = mysql_fetch_assoc($result))
+			{
+?>	
                 <tr class="odd gradeX">
-                    <td><?=$_array['IDFUNCIONARIO']?></td>
+<!--                    <td><?=$_array['IDFUNCIONARIO']?></td>
                     <td><?=$_array['NOME']?></td>
-                    <td><?=$_array['LOGIN']?></td>
+                    <td><?=$_array['LOGIN']?></td>-->
                     <td>
                     	<a href="#" class="btnAlterar" id="<?=$_array['IDFUNCIONARIO']?>">
                         	<i class="fa fa-edit fa-fw"></i>Detalhe
@@ -27,9 +27,9 @@
                         </a>
                     </td>
 			    </tr>
-//<?php
-////			}
-//?>
+<?php
+			}
+?>
 		    </tbody>
     	</table>
     

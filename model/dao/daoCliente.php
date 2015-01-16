@@ -1,7 +1,7 @@
 <?php
 
 /* incluindo o arquivo com as configurações do BD */
-include_once('conexao.php');
+include "conexao.php";
 
 /* Classe de acesso a dados do Funcionario */
 
@@ -73,21 +73,21 @@ class DaoCliente {
     public function Listar() {
 
         /* Monta o Sql */
-        $sql = "select * from CLIENTE order by IDCLIENTE ";
+        $sql = "select * from cliente order by idcliente ";
 
         /* Executando a consulta SQL */
         $result = $this->executaSQL($sql);
 
         /* Obtém um linha do resultado como uma matriz associativa */
-        if (mysql_fetch_assoc($result) == 0) {
-
-            return -1;
-        } else {
-
-            /* Move o ponteiro interno do resultado */
-            mysql_data_seek($result, 0);
-            return $result;
-        }
+//        if (mysql_fetch_assoc($result) == 0) {
+//
+//            return -1;
+//        } else {
+//
+//            /* Move o ponteiro interno do resultado */
+//            mysql_data_seek($result, 0);
+//            return $result;
+//        }
     }
 
     private function executaSQL($sql) {
@@ -97,5 +97,5 @@ class DaoCliente {
     }
 
 }
-?>
+
 

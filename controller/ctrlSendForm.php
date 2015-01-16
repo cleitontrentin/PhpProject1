@@ -8,24 +8,17 @@ class CtrlSendForm
 	
 	public function MostraTela($model, $result=null, $Objects=null){
 	
-		$acao = $_POST->$dirh = opendir($dirname);
-                if ($dirh) {
-                    while (($dirElement = readdir($dirh)) !== false) {
-                        
-                    }
-                    closedir($dirh);
-                }($_REQUEST ['txtAcao']);
+		$acao = htmlspecialchars($_REQUEST ['txtAcao']);
 		$pagina = "../view/";
 
 		/*Identificado o objeto */
-		if ($model instanceof cliente){
+		if ($model instanceof Cliente){
 			$pagina = $pagina . "cliente";
 		}elseif ($model instanceof Funcionario){
 			$pagina = $pagina . "funcionario";
 		}elseif ($model instanceof OrdemServico){
 			$pagina = $pagina . "ordemServico";
-		
-		}
+				}
 			
 		/*Identificado a ação*/
 		if ($acao == "principal"){
@@ -48,9 +41,6 @@ class CtrlSendForm
 		require($pagina);
 	}
 
-
-
-
 	public function mostraAlertMsg($tipo, $titulo, $texto, $formulario, $acao)
 	{
 		require("../view/mensagemAlerta.php");
@@ -63,3 +53,4 @@ class CtrlSendForm
 	
 }
 ?>
+
