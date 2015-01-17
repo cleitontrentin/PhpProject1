@@ -15,16 +15,16 @@
 			{
 ?>	
                 <tr class="odd gradeX">
-                    <td><?=$_array['IDCLIENTE']?></td>
-                    <td><?=$_array['NOME']?></td>
-                    <td><?=$_array['ENDERECO']?></td>
-                    <td><?=$_array['TELEFONE']?></td>
+                    <td><?=$_array['idCliente']?></td>
+                    <td><?=$_array['nomeCliente']?></td>
+                    <td><?=$_array['endereco']?></td>
+                    <td><?=$_array['telefone']?></td>
                     <td>
-                    	<a href="#" class="btnAlterar" id="<?=$_array['IDCLIENTE']?>">
+                    	<a href="#" class="btnAlterar" id="<?=$_array['idCliente']?>">
                         	<i class="fa fa-edit fa-fw"></i>Detalhe
                         </a>
                         &nbsp;
-                        <a href="#" class="btnExcluir" id="<?=$_array['IDCLIENTE']?>">
+                        <a href="#" class="btnExcluir" id="<?=$_array['idCliente']?>">
                         	<i class="fa fa-trash-o fa-fw"></i>Excluir
                         </a>
                     </td>

@@ -54,13 +54,13 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Endereço</label>
-                                            <input tabindex="3" class="form-control" placeholder="Informe seu endereço" type="text" id="txtEncereco" name="txtEndereco">
+                                            <input tabindex="2" class="form-control" placeholder="Informe seu endereço" type="text" id="txtEncereco" name="txtEndereco">
                                         </div>
                                 </div>
                                 <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Telefone</label>
-                                            <input tabindex="2" class="form-control" placeholder="Informe um Telefone" type="text" id="txt" name="txtLogin">
+                                            <input tabindex="3" class="form-control" placeholder="Informe um Telefone" type="text" id="txtTelefone" name="txttelefone">
                                         </div>
 <!--                                        <div class="form-group">
                                             <label>Confirme sua Senha</label>
@@ -104,7 +104,7 @@
 					//variaveis para o objeto
 					, txtNome: document.forms["formAtual"].elements["txtNome"].value
 					, txtEndereco: document.forms["formAtual"].elements["txtEndereco"].value
-					, txtTelefone: document.forms["formAtual"].elements["txtTelefone"].value
+					, txtTelefone: document.forms["formAtual"].elements["txttelefone"].value
 				}, function(responseTxt,statusTxt,xhr){
 				if(statusTxt=="error")
 					alert("Error: "+xhr.status+": "+xhr.statusText);

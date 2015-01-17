@@ -57,7 +57,7 @@ class DaoFuncionario {
 		$result = $this->executaSQL($sql);
 
 		/*Verifica se a consulta anterior retornou algum resultado*/
-		if (mysql_fetch_assoc($resul) == 0)
+		if (mysql_fetch_assoc($result)== 0)
 		{
 			return 0;
 		}
@@ -80,17 +80,17 @@ class DaoFuncionario {
 		$result = $this->executaSQL($sql);
 
 		/*Obtém um linha do resultado como uma matriz associativa*/
-//		if (mysql_fetch_assoc($result) == 0){
-//			
-//			return 0;
-//			
-//		}else{
-//			
-//			/*Move o ponteiro interno do resultado*/
-//			mysql_data_seek($result, 0);
-//			return $result;
+		if (mysql_fetch_assoc($result) == 0){
 			
-		//}
+			return 0;
+			
+		}else{
+			
+			/*Move o ponteiro interno do resultado*/
+			mysql_data_seek($result, 0);
+			return $result;
+			
+		}
 
 	}
 

@@ -1,7 +1,7 @@
 <?php
 
 /* incluindo o arquivo com as configurações do BD */
-include "conexao.php";
+include_once ("conexao.php");
 
 /* Classe de acesso a dados do Funcionario */
 
@@ -17,7 +17,7 @@ class DaoCliente {
     public function Gravar($model) {
         /* Monta o Sql */
         $sql = "insert into CLIENTE (nomeCliente,endereco,telefone,desativado) values ('"
-                . $model->getNome()
+                . $model->getNomeCliente()
                 . $model->getEndereco()
                 . $model->getTelefone()
                 . $model->getDesativado() . "')";
@@ -41,10 +41,10 @@ class DaoCliente {
 
     public function Alterar($model) {
         /* Monta o Sql */
-        $sql = "update CLIENTE set NOMECLIENTE= '" . $model->getNome() . "', ENDERECO = '"
-                . $model->getEndereco() . "', TELEFONE = '"
-                . $model->getTelefone() . "', DESATIVADO = '"
-                . $model->getdesativado() . "' where IDCLIENTE = "
+        $sql = "update cliente set nomeCliente= '" . $model->getNomeCliente() . "', endereco = '"
+                . $model->getEndereco() . "', telefone = '"
+                . $model->getTelefone() . "', desaticado = '"
+                . $model->getdesativado() . "' where idCliente = "
                 . $model->getIdCliente();
 
         $this->executaSQL($sql);
@@ -55,7 +55,7 @@ class DaoCliente {
 
     public function Detalhe($model) {
         /* Monta o Sql */
-        $sql = "select * from CLIENTE where IDCLIENTE = " . $model->getIdCliente();
+        $sql = "select * from cliente where idCliente = " . $model->getIdCliente();
         $result = $this->executaSQL($sql);
 
         /* Verifica se a consulta anterior retornou algum resultado */
@@ -73,21 +73,21 @@ class DaoCliente {
     public function Listar() {
 
         /* Monta o Sql */
-        $sql = "select * from cliente order by idcliente ";
+        $sql = "select * from cliente order by idCliente ";
 
         /* Executando a consulta SQL */
         $result = $this->executaSQL($sql);
 
         /* Obtém um linha do resultado como uma matriz associativa */
-//        if (mysql_fetch_assoc($result) == 0) {
-//
-//            return -1;
-//        } else {
-//
-//            /* Move o ponteiro interno do resultado */
-//            mysql_data_seek($result, 0);
-//            return $result;
-//        }
+        if (mysql_fetch_assoc($result) == 0) {
+
+            return -1;
+        } else {
+
+            /* Move o ponteiro interno do resultado */
+            mysql_data_seek($result, 0);
+            return $result;
+        }
     }
 
     private function executaSQL($sql) {
