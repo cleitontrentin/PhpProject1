@@ -16,7 +16,7 @@
 ?>	
                 <tr class="odd gradeX">
                     <td><?=$_array['idCliente']?></td>
-                    <td><?=$_array['nomeCliente']?></td>
+                    <td><?=$_array['nome_cliente']?></td>
                     <td><?=$_array['endereco']?></td>
                     <td><?=$_array['telefone']?></td>
                     <td>

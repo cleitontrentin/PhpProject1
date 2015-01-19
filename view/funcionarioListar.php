@@ -14,15 +14,15 @@
 			{
 ?>	
                 <tr class="odd gradeX">
-                    <td><?=$_array['idfuncionario']?></td>
-                    <td><?=$_array['nome_Funcio']?></td>
+                    <td><?=$_array['idFuncionario']?></td>
+                    <td><?=$_array['nome_func']?></td>
                     <td><?=$_array['login']?></td>
                     <td>
-                    	<a href="#" class="btnAlterar" id="<?=$_array['idfuncionario']?>">
+                    	<a href="#" class="btnAlterar" id="<?=$_array['idFuncionario']?>">
                         	<i class="fa fa-edit fa-fw"></i>Detalhe
                         </a>
                         &nbsp;
-                        <a href="#" class="btnExcluir" id="<?=$_array['idfuncionario']?>">
+                        <a href="#" class="btnExcluir" id="<?=$_array['idFuncionario']?>">
                         	<i class="fa fa-trash-o fa-fw"></i>Excluir
                         </a>
                     </td>

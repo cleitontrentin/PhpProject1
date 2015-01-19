@@ -17,7 +17,7 @@ class DaoFuncionario {
 	/* função para gravar os dados */
 	public function Gravar($model) {
 		/*Monta o Sql*/
-		$sql = "insert into funcionario (nome_Funcio, login, senha) values ('"
+		$sql = "insert into funcionario (nome_func, login, senha) values ('"
                       . $model->getNomefunc(). "', '"
 		      . $model->getLogin(). "', '"
                       . $model->getSenha(). "', '";
@@ -32,7 +32,7 @@ class DaoFuncionario {
 
 	public function Excluir($model) {
 		/*Monta o Sql*/
-		$sql = "delete from funcionario where idfuncionario = " . $model->getIdFuncionario();
+		$sql = "delete from FUNCIONARIO  where idFuncionario = " . $model->getIdFuncionario();
 		$this->executaSQL($sql);
 		
 		/*Retorna quantos registros foram afetados com a instrução anterior*/
@@ -41,7 +41,7 @@ class DaoFuncionario {
 
 	public function Alterar($model) {
 		/*Monta o Sql*/
-		$sql = "update funcionario set nome_Funcio= '" . $model->getNomefunc() . "', login = '" 
+		$sql = "update FUNCIONARIO set nome_func= '" . $model->getNomefunc() . "', login = '" 
 												. $model->getLogin() . "', senha = '" 
 												. $model->getSenha() . "' where idfuncionario = "
 												. $model->getIdFuncionario();
@@ -53,11 +53,11 @@ class DaoFuncionario {
 
 	public function Detalhe($model) {
 		/*Monta o Sql*/
-		$sql = "select * from funcionario where idfuncionario = " . $model->getIdFuncionario();
+		$sql = "select * from funcionario where idFuncionario = " . $model->getIdFuncionario();
 		$result = $this->executaSQL($sql);
 
 		/*Verifica se a consulta anterior retornou algum resultado*/
-		if (mysql_fetch_assoc($result)== 0)
+		if (mysql_fetch_assoc($result) == 0)
 		{
 			return 0;
 		}
@@ -74,7 +74,7 @@ class DaoFuncionario {
 	public function Listar() {
 
 		/*Monta o Sql*/
-		$sql = "select * from funcionario order by idfuncionario "; 
+		$sql = "select * from funcionario order by idFuncionario "; 
 		
 		/*Executando a consulta SQL*/
 		$result = $this->executaSQL($sql);

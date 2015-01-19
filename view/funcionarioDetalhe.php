@@ -18,17 +18,17 @@
                                 <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Nome</label>
-                                            <input tabindex="1" class="form-control" placeholder="Informe seu nome completo" type="text" id="txtNome"name="txtnome" value="<?=$_array["nome_Funcio"]?>">
+                                            <input tabindex="1" class="form-control" placeholder="Informe seu nome completo" type="text" id="txtNome"name="txtNome" value="<?=$_array["nome_func"]?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Senha</label>
-                                            <input tabindex="2" class="form-control" placeholder="Informe uma senha" type="password" id="txtSenha" name="txtsenha" value="<?=$_array["senha"]?>">
+                                            <input tabindex="2" class="form-control" placeholder="Informe uma senha" type="password" id="txtSenha" name="txtSenha" value="<?=$_array["senha"]?>">
                                         </div>
                                 </div>
                                 <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Login</label>
-                                            <input tabindex="3" class="form-control" placeholder="Informe um nome de acesso" type="text" id="txtLogin" name="txtlogin" value="<?=$_array["login"]?>">
+                                            <input tabindex="3" class="form-control" placeholder="Informe um nome de acesso" type="text" id="txtLogin" name="txtLogin" value="<?=$_array["login"]?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Confirme sua Senha</label>
@@ -67,10 +67,10 @@
 					txtFormulario: document.forms["formAtual"].elements["txtFormulario"].value
 					, txtAcao: document.forms["formAtual"].elements["txtAcao"].value
 					//variaveis para o objeto
-					, txtIdFuncionario: document.forms["formAtual"].elements["txtidfuncionario"].value
-					, txtNome: document.forms["formAtual"].elements["txtnome"].value
-					, txtLogin: document.forms["formAtual"].elements["txtlogin"].value
-					, txtSenha: document.forms["formAtual"].elements["txtsenha"].value
+					, txtIdFuncionario: document.forms["formAtual"].elements["txtIdFuncionario"].value
+					, txtNome: document.forms["formAtual"].elements["txtNome"].value					
+					, txtSenha: document.forms["formAtual"].elements["txtSenha"].value
+                                        , txtLogin: document.forms["formAtual"].elements["txtLogin"].value
 				}, function(responseTxt,statusTxt,xhr){
 				if(statusTxt=="error")
 					alert("Error: "+xhr.status+": "+xhr.statusText);

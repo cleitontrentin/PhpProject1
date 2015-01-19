@@ -19,7 +19,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label>Nome</label>
-                                <input class="form-control" placeholder="Informe seu nome completo" type="text" id="txtNome" name="txtNome" value="<?= $_array["nomeCliente"] ?>">
+                                <input class="form-control" placeholder="Informe seu nome completo" type="text" id="txtNome" name="txtNome" value="<?= $_array["nome_cliente"] ?>">
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Telefone</label>
-                                <input class="form-control" placeholder="Informe o numero" type="text" id="txtNumero" name="txtTelefone" value="<?= $_array["telefone"] ?>">
+                                <input class="form-control" placeholder="Informe o numero" type="text" id="txtTelefone" name="txtTelefone" value="<?= $_array["telefone"] ?>">
                             </div>
                         </div>
                     </div>
@@ -74,9 +74,9 @@
             , txtAcao: document.forms["formAtual"].elements["txtAcao"].value
                     //variaveis para o objeto
             , txtIdCliente: document.forms["formAtual"].elements["txtidCliente"].value
-            , txtNome: document.forms["formAtual"].elements["txtnome"].value
-            , txtEndereco: document.forms["formAtual"].elements["txtendereco"].value
-            , txttelefone: document.forms["formAtual"].elements["txttelefone"].value
+            , txtNome: document.forms["formAtual"].elements["txtNome"].value
+            , txtEndereco: document.forms["formAtual"].elements["txtEndereco"].value
+            , txtTelefone: document.forms["formAtual"].elements["txtTelefone"].value
 
         }, function(responseTxt, statusTxt, xhr) {
             if (statusTxt == "error")

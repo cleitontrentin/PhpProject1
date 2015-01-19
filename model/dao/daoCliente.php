@@ -16,11 +16,11 @@ class DaoCliente {
 
     public function Gravar($model) {
         /* Monta o Sql */
-        $sql = "insert into CLIENTE (nomeCliente,endereco,telefone,desativado) values ('"
+        $sql = "insert into cliente ( nome_cliente, endereco, telefone, desativado ) values ('"
                 . $model->getNomeCliente()
                 . $model->getEndereco()
                 . $model->getTelefone()
-                . $model->getDesativado() . "')";
+                . $model->getDesativado() ."')";
 
 
         /* Executando a consulta SQL */
@@ -41,7 +41,7 @@ class DaoCliente {
 
     public function Alterar($model) {
         /* Monta o Sql */
-        $sql = "update cliente set nomeCliente= '" . $model->getNomeCliente() . "', endereco = '"
+        $sql = "update cliente set nome_cliente= '" . $model->getNomeCliente() . "', endereco = '"
                 . $model->getEndereco() . "', telefone = '"
                 . $model->getTelefone() . "', desaticado = '"
                 . $model->getdesativado() . "' where idCliente = "
