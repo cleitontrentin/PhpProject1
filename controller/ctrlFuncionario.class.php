@@ -27,7 +27,7 @@ class CtrlFuncionario
 	
 		/*Pegando os campos do formulário e colocando no model*/
 		$objFuncionario->setIdFuncionario($this->Verifica('txtIdFuncionario'));
-		$objFuncionario->setNomefunc($this->Verifica('txtNome'));
+		$objFuncionario->setNome($this->Verifica('txtNome'));
 		$objFuncionario->setLogin($this->Verifica('txtLogin'));
 		$objFuncionario->setSenha($this->Verifica('txtSenha'));
 		

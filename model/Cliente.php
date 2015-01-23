@@ -14,50 +14,51 @@
 class cliente {
     //put your code here
     private $idCliente;
-    private $nomeCliente;
+    private $nome;
     private $endereco;
     private $telefone;
     private $desativado;
     
-    function getIdCliente() {
+    public function getIdCliente() {
         return $this->idCliente;
     }
 
-    function getNomeCliente() {
-        return $this->nomeCliente;
+    public function getNome() {
+        return $this->nome;
     }
 
-    function getEndereco() {
+    public function getEndereco() {
         return $this->endereco;
     }
 
-    function getTelefone() {
+    public function getTelefone() {
         return $this->telefone;
     }
 
-    function getDesativado() {
+    public function getDesativado() {
         return $this->desativado;
     }
 
-    function setIdCliente($idCliente) {
+    public function setIdCliente($idCliente) {
         $this->idCliente = $idCliente;
     }
 
-    function setNomeCliente($nomeCliente) {
-        $this->nomeCliente = $nomeCliente;
+    public function setNome($nome) {
+        $this->nome = $nome;
     }
 
-    function setEndereco($endereco) {
+    public function setEndereco($endereco) {
         $this->endereco = $endereco;
     }
 
-    function setTelefone($telefone) {
+    public function setTelefone($telefone) {
         $this->telefone = $telefone;
     }
 
-    function setDesativado($desativado) {
+    public function setDesativado($desativado) {
         $this->desativado = $desativado;
     }
+
 
 
     

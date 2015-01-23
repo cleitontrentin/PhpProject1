@@ -1,7 +1,7 @@
 <?php
 
 /*incluindo o arquivo com as configurações do BD*/
-include "conexao.php";
+include_once("conexao.php");
 
 /*Classe de acesso a dados do Funcionario*/
 class DaoFuncionario {
@@ -17,11 +17,12 @@ class DaoFuncionario {
 	/* função para gravar os dados */
 	public function Gravar($model) {
 		/*Monta o Sql*/
-		$sql = "insert into funcionario (nome_Funcio, login, senha) values ('"
-                      . $model->getNomefunc(). "', '"
-		      . $model->getLogin(). "', '"
-                      . $model->getSenha(). "', '";
-                      
+		$sql = "insert into funcionario (nome, login, senha) values ('"
+                      . $model->getNome()
+					  . "', '"
+						. $model->getLogin()
+                      . "', '"
+                      . $model->getSenha(). "')";
 					  
 		/*Executando a consulta SQL*/
 		$this->executaSQL($sql);
@@ -41,9 +42,9 @@ class DaoFuncionario {
 
 	public function Alterar($model) {
 		/*Monta o Sql*/
-		$sql = "update funcionario set nome_Funcio= '" . $model->getNomefunc() . "', login = '" 
+		$sql = "update funcionario set nome= '" . $model->getNome() . "', login = '" 
 												. $model->getLogin() . "', senha = '" 
-												. $model->getSenha() . "' where idfuncionario = "
+												. $model->getSenha() . "' where idfuncionario = " 
 												. $model->getIdFuncionario();
 		$this->executaSQL($sql);
 
@@ -57,7 +58,7 @@ class DaoFuncionario {
 		$result = $this->executaSQL($sql);
 
 		/*Verifica se a consulta anterior retornou algum resultado*/
-		if (mysql_fetch_assoc($result)== 0)
+		if (mysql_fetch_assoc($result) == 0)
 		{
 			return 0;
 		}

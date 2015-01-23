@@ -1,58 +1,130 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<?
+	/*verificando a sessão*/
+	include_once("../controller/ctrlSessao.php");
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="pt-br">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="content-language" content="pt-br">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="Description" content="Locadora de Veículos">
-        <meta name="author" content="Curso Tecnico em informatica para internet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Gerenciador de Ordem de Serviço</title>
+    <title>Cadastro de Cleitne</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="../include/css/bootstrap.css" rel="stylesheet">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+    <!-- Core CSS - Include with every page -->
+    <link href="../include/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../include/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Page-Level Plugin CSS - Tables -->
+    <link href="../include/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">    
+    <!-- Page-Level Plugin CSS - Dashboard -->
+    <link href="../include/css/plugins/timeline/timeline.css" rel="stylesheet">
+    <!-- SB Admin CSS - Include with every page -->
+    <link href="../include/css/sb-admin.css" rel="stylesheet">
 
-    <body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
-        <div class="container">
-            <nav class="navbar navbar-inverse" role="navigation">
+<body>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/PhpProject1/view/admin.php">Entrar</a>
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Entrar</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+<!--                        <li><a href="#" id="detalheUsuario"><i class="fa fa-user fa-fw"></i> <?=$sLogin?> </a>
+                        </li>-->
+                        <li class="divider"></li>
+                        <li><a href="../view/logon.php"><i class="fa fa-sign-out fa-fw"></i> Sair </a>
                         </li>
                     </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default navbar-static-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="side-menu">
+                       
+                        <li>
+                            <a href="index.php"><i class="fa fa-table fa-fw"></i> Principal</a>
+                        </li>
+ 
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastros Principais<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a class="linkForm" id="cliente" href="#">Cliente</a></li>
+                                <li><a class="linkForm" id="funcionario" href="#">Funcionário</a></li>
+                                <li><a class="linkForm" id="funcionario" href="#">Ordem de Serviço</a></li>
+                           
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                    <!-- /#side-menu -->
                 </div>
-                <!-- /.navbar-collapse -->
-            </nav>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+        	<div id="alertForm">
+            </div>
+        	<div id="conteudoForm">
+            </div>
         </div>
-        <!-- /.container -->
+        <!-- /#page-wrapper -->
 
-        <div class="container">
+    </div>
+    <!-- /#wrapper -->
 
-            <div class="jumbotron hero-spacer">
-                <h1></h1>
-                <p></p>
-            </div>
+    <!-- Core Scripts - Include with every page -->
+    <script src="../include/js/jquery-1.10.2.js"></script>
+    <script src="../include/js/bootstrap.min.js"></script>
+    <script src="../include/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
-            <hr>
-            <!-- /.row -->
+    <!-- Page-Level Plugin Scripts - Dashboard -->
+    <script src="../include/js/plugins/morris/raphael-2.1.0.min.js"></script>
+	
+    <!-- Page-Level Plugin Scripts - Tables -->
+    <script src="../include/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="../include/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="../include/js/sb-admin.js"></script>
 
-            <div class="row text-center" id="listaCarro">
+    <!-- Scripts de funcionario da pagina -->
+	<script type="text/javascript">
+		$(".linkForm").click(function(){
+			$("#conteudoForm").load("../controller/ctrlReceiveForm.php" ,{
+					//variaveis de controle
+					txtFormulario: this.id
+					, txtAcao: 'principal'
+				}, function(responseTxt,statusTxt,xhr){
+				if(statusTxt=="error")
+					alert("Error: "+xhr.status+": "+xhr.statusText);
+			});
+		});	
 
-                <hr>
+    </script>
 
-            </div>
-            <!-- /.container -->
 
-            <!-- JavaScript -->
-            <script src="../include/js/jquery-1.10.2.js"></script>
-            <script src="../include/js/bootstrap.js"></script>
-    </body>
+</body>
+
 </html>
-
-

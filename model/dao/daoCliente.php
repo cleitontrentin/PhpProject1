@@ -1,101 +1,127 @@
 <?php
 
-/* incluindo o arquivo com as configurações do BD */
-include_once ("conexao.php");
+/*incluindo o arquivo com as configurações do BD*/
+include_once("conexao.php");
 
-/* Classe de acesso a dados do Funcionario */
-
+/*Classe de acesso a dados do cliente*/
 class DaoCliente {
-    /* construtor da classe */
 
-    public function DaoCliente() {
-        
-    }
+	/*Objeto de controle fluxo*/
+	private $objSendForm;
 
-    /* função para gravar os dados */
+	/*construtor da classe*/
+	public function DaoCliente(){
+		
+	}
+	
+	/* função para gravar os dados */
+	public function Gravar($model) {
+		/*Monta o Sql*/
+		$sql = "insert into cliente (nome, endereco, telefone) values ('"
+                      . $model->getNome()
+					  . "', '"
+						. $model->getendereco()
+                      . "', '"
+                      . $model->gettelefone(). "')";
+					  
+		/*Executando a consulta SQL*/
+		$this->executaSQL($sql);
+		
+		/*Obtém o ID gerado pela operação INSERT anterior*/
+		return mysql_insert_id();
+	}
 
-    public function Gravar($model) {
-        /* Monta o Sql */
-        $sql = "insert into CLIENTE (nomeCliente,endereco,telefone,desativado) values ('"
-                . $model->getNomeCliente()
-                . $model->getEndereco()
-                . $model->getTelefone()
-                . $model->getDesativado() . "')";
+	public function Excluir($model) {
+		/*Monta o Sql*/
+		$sql = "delete from funcionario where idcliente = " . $model->getIdCliente();
+		$this->executaSQL($sql);
+		
+		/*Retorna quantos registros foram afetados com a instrução anterior*/
+		return mysql_affected_rows();
+	}
 
+	public function Alterar($model) {
+		/*Monta o Sql*/
+		$sql = "update cliente set nome = '" . $model->getNome() . "', endereco = '" 
+												. $model->getEndereco() . "', endereco = '" 
+												. $model->getTelefone() . "' where idcliente = " 
+												. $model->getIdCliente();
+		$this->executaSQL($sql);
 
-        /* Executando a consulta SQL */
-        $this->executaSQL($sql);
+		/*Retorna quantos registros foram afetados com a instrução anterior*/
+		return mysql_affected_rows();
+	}
 
-        /* Obtém o ID gerado pela operação INSERT anterior */
-        return mysql_insert_id();
-    }
+	public function Detalhe($model) {
+		/*Monta o Sql*/
+		$sql = "select * from cliente where idcliente = " . $model->getIdCliente();
+		$result = $this->executaSQL($sql);
 
-    public function Excluir($model) {
-        /* Monta o Sql */
-        $sql = "delete from CLIENTE where IDCLIENTE = " . $model->getIdCliente();
-        $this->executaSQL($sql);
+		/*Verifica se a consulta anterior retornou algum resultado*/
+		if (mysql_fetch_assoc($result) == 0)
+		{
+			return 0;
+		}
+		else
+		{
+			/*Move o ponteiro do dataset para o inicio do resultado*/
+			mysql_data_seek($result, 0);
 
-        /* Retorna quantos registros foram afetados com a instrução anterior */
-        return mysql_affected_rows();
-    }
+			/*Retorna os dados do primeiro registro retornado pela consulta*/
+			return mysql_fetch_assoc($result);
+		}
+	}
 
-    public function Alterar($model) {
-        /* Monta o Sql */
-        $sql = "update cliente set nomeCliente= '" . $model->getNomeCliente() . "', endereco = '"
-                . $model->getEndereco() . "', telefone = '"
-                . $model->getTelefone() . "', desaticado = '"
-                . $model->getdesativado() . "' where idCliente = "
-                . $model->getIdCliente();
+	public function Listar() {
 
-        $this->executaSQL($sql);
+		/*Monta o Sql*/
+		$sql = "select * from cliente order by idcliente "; 
+		
+		/*Executando a consulta SQL*/
+		$result = $this->executaSQL($sql);
 
-        /* Retorna quantos registros foram afetados com a instrução anterior */
-        return mysql_affected_rows();
-    }
+		/*Obtém um linha do resultado como uma matriz associativa*/
+		if (mysql_fetch_assoc($result) == 0){
+			
+			return 0;
+			
+		}else{
+			
+			/*Move o ponteiro interno do resultado*/
+			mysql_data_seek($result, 0);
+			return $result;
+			
+		}
 
-    public function Detalhe($model) {
-        /* Monta o Sql */
-        $sql = "select * from cliente where idCliente = " . $model->getIdCliente();
-        $result = $this->executaSQL($sql);
+	}
 
-        /* Verifica se a consulta anterior retornou algum resultado */
-        if (mysql_fetch_assoc($result) == 0) {
-            return -1;
-        } else {
-            /* Move o ponteiro do dataset para o inicio do resultado */
-            mysql_data_seek($result, 0);
+	public function Login($model) {
+		/*Monta o Sql*/
+		$sql = "select * from cliente where login = '" . $model->getLogin() . "' and senha = '" . $model->getsenha() . "'";
 
-            /* Retorna os dados do primeiro registro retornado pela consulta */
-            return mysql_fetch_assoc($result);
-        }
-    }
+		/*Executando a consulta SQL*/
+		$result = $this->executaSQL($sql);
 
-    public function Listar() {
+		/*Obtém um linha do resultado como uma matriz associativa*/
+		if (mysql_fetch_assoc($result) == 0)
+		{
+			return 0;
+		}
+		else
+		{
+			/*Move o ponteiro interno do resultado*/
+			mysql_data_seek($result, 0);
+			return mysql_fetch_assoc($result);
+		}
+	   
+	}
 
-        /* Monta o Sql */
-        $sql = "select * from cliente order by idCliente ";
-
-        /* Executando a consulta SQL */
-        $result = $this->executaSQL($sql);
-
-        /* Obtém um linha do resultado como uma matriz associativa */
-        if (mysql_fetch_assoc($result) == 0) {
-
-            return -1;
-        } else {
-
-            /* Move o ponteiro interno do resultado */
-            mysql_data_seek($result, 0);
-            return $result;
-        }
-    }
-
-    private function executaSQL($sql) {
-        /* Executa o Sql */
-        //echo $sql;
-        return mysql_query($sql);
-    }
-
+	private function executaSQL($sql) {
+		/*Executa o Sql*/
+//		echo $sql;
+		return mysql_query($sql);
+		
+	}
+	 
 }
-
-
+?>

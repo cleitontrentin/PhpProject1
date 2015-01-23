@@ -27,11 +27,10 @@ class CtrlCliente
 	
 		/*Pegando os campos do formulário e colocando no model*/
 		$objCliente->setIdCliente($this->Verifica('txtIdCliente'));
-		$objCliente->setNomeCliente($this->Verifica('txtNome'));
+		$objCliente->setNome($this->Verifica('txtNome'));
 		$objCliente->setEndereco($this->Verifica('txtEndereco'));
 		$objCliente->setTelefone($this->Verifica('txtTelefone'));
-		//$objCliente->setDesativado($this->Verifica('txtDesativado'));
-	
+		
 		
 	}
 
@@ -46,7 +45,7 @@ class CtrlCliente
 		
 	}
 
-	/*função para gravar funcionario, obtem os dados do formulário*/
+	/*função para gravar cliente, obtem os dados do formulário*/
 	public function Gravar()
 	{
 		/*Cria os objetos*/
@@ -191,4 +190,3 @@ class CtrlCliente
 	
 }
 ?>
-

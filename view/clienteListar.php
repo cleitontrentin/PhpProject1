@@ -4,8 +4,8 @@
                 <tr>
                     <th>#</th>
                     <th>Nome</th>
-                    <th>Endereço</th>
-                    <th>Telefone</th>
+                    <th>Fone Residencial</th>
+                    <th>Fone Celular</th>
                     <th width="160px">Acao</th>
                 </tr>
             </thead>
@@ -15,16 +15,16 @@
 			{
 ?>	
                 <tr class="odd gradeX">
-                    <td><?=$_array['idCliente']?></td>
-                    <td><?=$_array['nomeCliente']?></td>
-                    <td><?=$_array['endereco']?></td>
-                    <td><?=$_array['telefone']?></td>
+                    <td><?=$_array['IDCLIENTE']?></td>
+                    <td><?=$_array['NOME']?></td>
+                    <td><?=$_array['ENDERECO']?></td>
+                    <td><?=$_array['TELEFONE']?></td>
                     <td>
-                    	<a href="#" class="btnAlterar" id="<?=$_array['idCliente']?>">
+                    	<a href="#" class="btnAlterar" id="<?=$_array['IDCLIENTE']?>">
                         	<i class="fa fa-edit fa-fw"></i>Detalhe
                         </a>
                         &nbsp;
-                        <a href="#" class="btnExcluir" id="<?=$_array['idCliente']?>">
+                        <a href="#" class="btnExcluir" id="<?=$_array['IDCLIENTE']?>">
                         	<i class="fa fa-trash-o fa-fw"></i>Excluir
                         </a>
                     </td>
@@ -76,4 +76,3 @@
 		});
 
     </script>
-

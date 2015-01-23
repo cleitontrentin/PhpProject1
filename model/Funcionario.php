@@ -15,51 +15,51 @@ class Funcionario {
     //put your code here
     
     private $idFuncionario;
-    private $nomefunc;
+    private $nome;
     private $login;
     private $senha;
     private $desativado;
     
-    function getIdFuncionario() {
+    public function getIdFuncionario() {
         return $this->idFuncionario;
     }
 
-    function getNomefunc() {
-        return $this->nomefunc;
+    public function getNome() {
+        return $this->nome;
     }
 
-    function getLogin() {
+    public function getLogin() {
         return $this->login;
     }
 
-    function getSenha() {
+    public function getSenha() {
         return $this->senha;
     }
 
-    function getDesativado() {
+    public function getDesativado() {
         return $this->desativado;
     }
 
-    function setIdFuncionario($idFuncionario) {
+    public function setIdFuncionario($idFuncionario) {
         $this->idFuncionario = $idFuncionario;
     }
 
-    function setNomefunc($nomefunc) {
-        $this->nomefunc = $nomefunc;
+    public function setNome($nome) {
+        $this->nome = $nome;
     }
 
-    function setLogin($login) {
+    public function setLogin($login) {
         $this->login = $login;
     }
 
-    function setSenha($senha) {
+    public function setSenha($senha) {
         $this->senha = $senha;
     }
 
-    function setDesativado($desativado) {
+    public function setDesativado($desativado) {
         $this->desativado = $desativado;
     }
 
-    
+
     
 }

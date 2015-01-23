@@ -17,10 +17,10 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-table fa-fw"></i> Cadastro de funcionario
+                            <i class="fa fa-table fa-fw"></i> Lista de funcionário
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body" id="ListaFuncionario" name="listaFuncionario">
+                        <div class="panel-body" id="ListaFuncionario" name="ListaFuncionario">
                         
                         </div>
                         <!-- /.panel-body -->
@@ -41,7 +41,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-edit fa-fw"></i> Cadastro de funcionario
+                            <i class="fa fa-edit fa-fw"></i> Cadastro de funcionário
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

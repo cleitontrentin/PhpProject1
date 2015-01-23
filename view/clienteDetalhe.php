@@ -19,7 +19,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label>Nome</label>
-                                <input class="form-control" placeholder="Informe seu nome completo" type="text" id="txtNome" name="txtNome" value="<?= $_array["nomeCliente"] ?>">
+                                <input class="form-control" placeholder="Informe seu nome completo" type="text" id="txtNome" name="txtNome" value="<?= $_array["NOME"] ?>">
                             </div>
                         </div>
                     </div>
@@ -27,35 +27,36 @@
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <label>Endereço</label>
-                                <input class="form-control" placeholder="Informe seu endereço" type="text" id="txtRua" name="txtEndereco" value="<?= $_array["endereco"] ?>">
+                                <input class="form-control" placeholder="Informe seu endereço" type="text" id="txtEndereco" name="txtRua" value="<?= $_array["ENDERECO"] ?>">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Telefone</label>
-                                <input class="form-control" placeholder="Informe o numero" type="text" id="txtNumero" name="txtTelefone" value="<?= $_array["telefone"] ?>">
+                                <input class="form-control" placeholder="Informe o numero de telefone" type="text" id="txtTelefone" name="txtTelefone" value="<?= $_array["TELEFONE"] ?>">
                             </div>
                         </div>
                     </div>
 
 
-
-                    <div class="row">
-                        <div class="col-lg-12" align="right">
-                            <input type="hidden" name="txtidCliente" id="txtIdCliente" value="<?= $_array["idCliente"] ?>" >
-                            <input type="hidden" name="txtFormulario" id="txtFormulario" value="cliente" >
-                            <input type="hidden" name="txtAcao" id="txtAcao" value="alterar">
-                            <button tabindex="5" type="button" class="btn btn-default" id="btnEnviar">Salvar</button>
-                            <button tabindex="5" type="button" class="btn btn-default" id="btnCancela">Cancelar</button>
-                        </div>
-                    </div>
-                </form>
-                <!-- /.row (nested) -->
             </div>
-            <!-- /.panel-body -->
+
+            <div class="row">
+                <div class="col-lg-12" align="right">
+                    <input type="hidden" name="txtIdCliente" id="txtIdCliente" value="<?= $_array["IDCLIENTE"] ?>" >
+                    <input type="hidden" name="txtFormulario" id="txtFormulario" value="cliente" >
+                    <input type="hidden" name="txtAcao" id="txtAcao" value="alterar">
+                    <button tabindex="5" type="button" class="btn btn-default" id="btnEnviar">Salvar</button>
+                    <button tabindex="5" type="button" class="btn btn-default" id="btnCancela">Cancelar</button>
+                </div>
+            </div>
+            </form>
+            <!-- /.row (nested) -->
         </div>
+        <!-- /.panel-body -->
     </div>
-    <!-- /.col-lg-12 -->
+</div>
+<!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
 
@@ -73,11 +74,10 @@
             txtFormulario: document.forms["formAtual"].elements["txtFormulario"].value
             , txtAcao: document.forms["formAtual"].elements["txtAcao"].value
                     //variaveis para o objeto
-            , txtIdCliente: document.forms["formAtual"].elements["txtidCliente"].value
-            , txtNome: document.forms["formAtual"].elements["txtnome"].value
-            , txtEndereco: document.forms["formAtual"].elements["txtendereco"].value
-            , txttelefone: document.forms["formAtual"].elements["txttelefone"].value
-
+            , txtIdCliente: document.forms["formAtual"].elements["txtIdCliente"].value
+            , txtNome: document.forms["formAtual"].elements["txtNome"].value
+            , txtEndereco: document.forms["formAtual"].elements["txtEndereco"].value
+            , txtTelefone: document.forms["formAtual"].elements["txtTelefone"].value
         }, function(responseTxt, statusTxt, xhr) {
             if (statusTxt == "error")
                 alert("Error: " + xhr.status + ": " + xhr.statusText);
@@ -97,5 +97,3 @@
     });
 
 </script>
-
-
