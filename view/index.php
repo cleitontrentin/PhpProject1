@@ -71,7 +71,7 @@
                             <ul class="nav nav-second-level">
                                 <li><a class="linkForm" id="cliente" href="#">Cliente</a></li>
                                 <li><a class="linkForm" id="funcionario" href="#">Funcionário</a></li>
-                                <li><a class="linkForm" id="funcionario" href="#">Ordem de Serviço</a></li>
+                                <li><a class="linkForm" id="ordem_servico" href="#">Ordem de Serviço</a></li>
                            
                             <!-- /.nav-second-level -->
                         </li>

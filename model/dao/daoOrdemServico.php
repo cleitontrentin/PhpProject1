@@ -44,7 +44,7 @@ class DaoOrdemServico {
 
     public function Alterar($model) {
         /* Monta o Sql */
-        $sql = "update ordem_servico set dt_Abertura= '" . $model->getDtAbertura() . "', dt_Fechamento = '"
+        $sql = "update ordem_servico set dtAbertura= '" . $model->getDtAbertura() . "', dtFechamento = '"
                 . $model->getDtFechamento() . "',vl_Servico  = '"
                 . $model->getValor() . "', desativado = '"
                 . $model->getDesativado() . "'Cliente_idCliente = "

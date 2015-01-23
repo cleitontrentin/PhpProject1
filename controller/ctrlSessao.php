@@ -1,6 +1,6 @@
 <?php
 
-	session_start();
+
 	
 	if(isset($_SESSION["USUARIO_LOGADO"]) and !empty($_SESSION["USUARIO_LOGADO"])){
 		if($_SESSION["USUARIO_LOGADO"] == true){
@@ -8,10 +8,8 @@
 			$sNome = $_SESSION["NOME"];
 			$sIdFuncionario = $_SESSION["IDFUNCIONARIO"];
 		}else{
-			header('location:../view/admin.php');
+			header('location:../view/index.php');
 		}
-	}else{
-		header('location:../view/logon.php');
 	}
 	
 ?>
