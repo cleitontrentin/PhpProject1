@@ -33,7 +33,7 @@ class DaoFuncionario {
 
 	public function Excluir($model) {
 		/*Monta o Sql*/
-		$sql = "delete from funcionario where idfuncionario = " . $model->getIdFuncionario();
+		$sql = "delete from FUNCIONARIO  where idFuncionario = " . $model->getIdFuncionario();
 		$this->executaSQL($sql);
 		
 		/*Retorna quantos registros foram afetados com a instrução anterior*/
@@ -54,7 +54,7 @@ class DaoFuncionario {
 
 	public function Detalhe($model) {
 		/*Monta o Sql*/
-		$sql = "select * from funcionario where idfuncionario = " . $model->getIdFuncionario();
+		$sql = "select * from funcionario where idFuncionario = " . $model->getIdFuncionario();
 		$result = $this->executaSQL($sql);
 
 		/*Verifica se a consulta anterior retornou algum resultado*/
@@ -75,7 +75,7 @@ class DaoFuncionario {
 	public function Listar() {
 
 		/*Monta o Sql*/
-		$sql = "select * from funcionario order by idfuncionario "; 
+		$sql = "select * from funcionario order by idFuncionario "; 
 		
 		/*Executando a consulta SQL*/
 		$result = $this->executaSQL($sql);
