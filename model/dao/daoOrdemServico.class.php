@@ -3,37 +3,34 @@
 /*incluindo o arquivo com as configurações do BD*/
 include_once("conexao.php");
 
-/*Classe de acesso a dados do cliente*/
-class DaoCliente {
-
-	/*Objeto de controle fluxo*/
-	private $objSendForm;
+/*Classe de acesso a dados do Opcional*/
+class DaoOrdemServico {
 
 	/*construtor da classe*/
-	public function DaoCliente(){
+	public function DaoOrdemServico(){
 		
 	}
 	
 	/* função para gravar os dados */
 	public function Gravar($model) {
 		/*Monta o Sql*/
-		$sql = "insert into cliente (nome, endereco, telefone) values ('"
-                      . $model->getNome()
-					  . "', '"
-						. $model->getendereco()
-                      . "', '"
-                      . $model->gettelefone(). "')";
+		$sql = "insert into ordemservico (idCliente, idFuncionario, DTABERTURA, DTFECHAMENTO, VALOR) values ('"
+                      . $model->getIdCliente() . "', '"
+                      . $model->getIdFuncionario() . "')"
+                      . $model->getDtAbertura() . "')"
+                      . $model->getDtFechamento() . "')"
+                      . $model->getServico() . "')";
 					  
 		/*Executando a consulta SQL*/
 		$this->executaSQL($sql);
 		
 		/*Obtém o ID gerado pela operação INSERT anterior*/
-		return mysql_insert_id();
+		return mysql_affected_rows();
 	}
 
 	public function Excluir($model) {
 		/*Monta o Sql*/
-		$sql = "delete from cliente where idcliente = " . $model->getIdCliente();
+		$sql = "delete from ordemservico where idORDEMSERVICO = '" . $model->getIdOrdemServico() . "' and IdCliente = '". $model->getIdCliente() . "'";
 		$this->executaSQL($sql);
 		
 		/*Retorna quantos registros foram afetados com a instrução anterior*/
@@ -42,10 +39,9 @@ class DaoCliente {
 
 	public function Alterar($model) {
 		/*Monta o Sql*/
-		$sql = "update cliente set nome = '" . $model->getNome() . "', endereco = '" 
-												. $model->getEndereco() . "', telefone = '" 
-												. $model->getTelefone() . "' where idCLIENTE = " 
-												. $model->getIdCliente();
+		$sql = "update idORDEMSERVICO set idORDEMSERVICO = '" . $model->getIdOrdemServico() . "', IdCliente = '" . $model->getIdCliente() ."'IdFuncionario = '".$model->getIdFuncionario(). 
+                        "' where idORDEMSERVICO= '" . $model->getIdOpcional() . "' and idORDEMSERVICO = '". $model->getIdOrdemServico() . "'";
+											  
 		$this->executaSQL($sql);
 
 		/*Retorna quantos registros foram afetados com a instrução anterior*/
@@ -54,7 +50,7 @@ class DaoCliente {
 
 	public function Detalhe($model) {
 		/*Monta o Sql*/
-		$sql = "select * from cliente where idcliente = " . $model->getIdCliente();
+		$sql = "select * from ORDEMSERVICO where idORDEMSERVICO = '" . $model->getIdOrdemServico() . "' and idCliente = '". $model->getIdCliente() . "'and idFuncionario = '". $model->getIdFuncionario()."'";
 		$result = $this->executaSQL($sql);
 
 		/*Verifica se a consulta anterior retornou algum resultado*/
@@ -75,7 +71,7 @@ class DaoCliente {
 	public function Listar() {
 
 		/*Monta o Sql*/
-		$sql = "select * from CLIENTE order by idCliente "; 
+		$sql = "select * from ORDEMSERVICO order by idORDEMSERVICO "; 
 		
 		/*Executando a consulta SQL*/
 		$result = $this->executaSQL($sql);
@@ -83,7 +79,7 @@ class DaoCliente {
 		/*Obtém um linha do resultado como uma matriz associativa*/
 		if (mysql_fetch_assoc($result) == 0){
 			
-			return 0;
+			return -1;
 			
 		}else{
 			
@@ -95,30 +91,9 @@ class DaoCliente {
 
 	}
 
-	public function Login($model) {
-		/*Monta o Sql*/
-		$sql = "select * from cliente where login = '" . $model->getLogin() . "' and senha = '" . $model->getsenha() . "'";
-
-		/*Executando a consulta SQL*/
-		$result = $this->executaSQL($sql);
-
-		/*Obtém um linha do resultado como uma matriz associativa*/
-		if (mysql_fetch_assoc($result) == 0)
-		{
-			return 0;
-		}
-		else
-		{
-			/*Move o ponteiro interno do resultado*/
-			mysql_data_seek($result, 0);
-			return mysql_fetch_assoc($result);
-		}
-	   
-	}
-
 	private function executaSQL($sql) {
 		/*Executa o Sql*/
-//		echo $sql;
+		//echo $sql;
 		return mysql_query($sql);
 		
 	}

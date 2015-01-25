@@ -1,28 +1,30 @@
     <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover" id="dataTables-funcionarios">
+        <table class="table table-striped table-bordered table-hover" id="dataTables-veiculos">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nome</th>
-                    <th>Login</th>
+                    <th>dtAbertura</th>
+                    <th>dtFechamento</th>
+                    <th>valor</th>
                     <th width="160px">Acao</th>
                 </tr>
             </thead>
             <tbody>
 <?php
-			while ($_array = mysql_fetch_assoc($result))
+			while  ($_array = mysql_fetch_assoc($result))
 			{
 ?>	
                 <tr class="odd gradeX">
-                    <td><?=$_array['idFUNCIONARIO']?></td>
-                    <td><?=$_array['NOME']?></td>
-                    <td><?=$_array['LOGIN']?></td>
+                    <td><?=$_array['idORDEMSERVICO']?></td>
+                    <td><?=$_array['DTABERTURA']?></td>
+                    <td><?=$_array['DTFECHAMENTO']?></td>
+                    <td><?=$_array['VALOR']?></td>
                     <td>
-                    	<a href="#" class="btnAlterar" id="<?=$_array['idFUNCIONARIO']?>">
+                    	<a href="#" class="btnAlterar" id="<?=$_array['idORDEMSERVICO']?>">
                         	<i class="fa fa-edit fa-fw"></i>Detalhe
                         </a>
                         &nbsp;
-                        <a href="#" class="btnExcluir" id="<?=$_array['idFUNCIONARIO']?>">
+                        <a href="#" class="btnExcluir" id="<?=$_array['idORDEMSERVICO']?>">
                         	<i class="fa fa-trash-o fa-fw"></i>Excluir
                         </a>
                     </td>
@@ -41,16 +43,16 @@
     <script>
 
 		$(document).ready(function() {
-			$('#dataTables-funcionarios').dataTable();
+			$('#dataTables-veiculos').dataTable();
 		});
 
 		$(".btnAlterar").click(function(){
 			$("#conteudoForm").load("../controller/ctrlReceiveForm.php" ,{
 					//variaveis de controle
-					txtFormulario: 'funcionario'
+					txtFormulario: 'ordemservico'
 					, txtAcao: 'detalhe'
 					//variaveis para o objeto
-					, txtIdFuncionario: this.id
+					, txtIdVeiculo: this.id
 				}, function(responseTxt,statusTxt,xhr){
 				if(statusTxt=="error")
 					alert("Error: "+xhr.status+": "+xhr.statusText);
@@ -61,10 +63,10 @@
 			if(confirm('Deseja realmente excluir o registro?')){
 				$("#alertForm").load("../controller/ctrlReceiveForm.php" ,{
 						//variaveis de controle
-						txtFormulario: 'funcionario'
+						txtFormulario: 'ordemservico'
 						, txtAcao: 'excluir'
 						//variaveis para o objeto
-						, txtIdFuncionario: this.id
+						, txtIdVeiculo: this.id
 					}, function(responseTxt,statusTxt,xhr){
 					if(statusTxt=="error")
 						alert("Error: "+xhr.status+": "+xhr.statusText);

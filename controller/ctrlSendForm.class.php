@@ -16,6 +16,8 @@ class CtrlSendForm
 			$pagina = $pagina . "cliente";
 		}elseif ($model instanceof Funcionario){
 			$pagina = $pagina . "funcionario";
+		}elseif ($model instanceof OrdemServico){
+			$pagina = $pagina . "ordemservico";
 		
 		}
 			
@@ -29,9 +31,6 @@ class CtrlSendForm
 			$pagina = $pagina . "Listar";
 		}elseif ($acao == "login"){
 			$_array = $result;
-			$pagina = "../view/middlelogon";
-		}elseif ($acao == "upload"){
-			$_array = $result;
 			$pagina = "../view/uploadProcess";
 		}			
 			
@@ -39,9 +38,6 @@ class CtrlSendForm
 				
 		require($pagina);
 	}
-
-	
-	
 
 
 	public function mostraAlertMsg($tipo, $titulo, $texto, $formulario, $acao)

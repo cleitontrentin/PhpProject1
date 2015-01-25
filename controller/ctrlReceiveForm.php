@@ -2,10 +2,11 @@
 	/*Incluindo a classe de controle do Funcionário*/
 	include_once("ctrlCliente.class.php");
 	include_once("ctrlFuncionario.class.php");
+	include_once("ctrlOrdemServico.class.php");
 	
 
 	//importando o controller referente ao controle de saída de informação
-	include_once("./ctrlSendForm.class.php");
+	include_once("ctrlSendForm.class.php");
 
 	/*htmlspecialchars - Converte caracteres especiais para a realidade HTML*/
 	/*$_REQUEST - Variáveis de requisição HTTP */
@@ -19,6 +20,10 @@
     	$objController = new CtrlCliente();
 	}elseif($formulario == "funcionario"){
     	$objController = new CtrlFuncionario();
+	}elseif($formulario == "ordemservico"){
+    	$objController = new CtrlOrdemServico();
+	}elseif($formulario == "upload"){
+    	$objController = new CtrlSendForm();
 	}
 	
     /*identifica qual ação está sendo solicitada*/
@@ -50,9 +55,7 @@
 		/*verificando a sessão*/
 		include_once("ctrlSessao.php");
 		$objController->Pesquisa();
-    }elseif ($acao == "login"){
-		$objController->Login();
-    
-	}	
+   }
+	
 		
 ?>

@@ -36,7 +36,7 @@
                                         </div>
                                 </div>
                                 <div class="col-lg-12" align="right">
-									<input type="hidden" name="txtCodigo" id="txtIdFuncionario" value="<?=$_array["IDFUNCIONARIO"]?>" >
+									<input type="hidden" name="txtCodigo" id="txtIdFuncionario" value="<?=$_array["idFUNCIONARIO"]?>" >
 									<input type="hidden" name="txtFormulario" id="txtFormulario" value="funcionario" >
 									<input type="hidden" name="txtAcao" id="txtAcao" value="alterar">
 									<button tabindex="5" type="button" class="btn btn-default" id="btnEnviar">Salvar</button>

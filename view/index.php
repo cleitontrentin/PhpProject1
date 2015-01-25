@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cadastro de Cleitne</title>
+    <title> Entrar </title>
 
     <!-- Core CSS - Include with every page -->
     <link href="../include/css/bootstrap.min.css" rel="stylesheet">
@@ -63,7 +63,7 @@
                     <ul class="nav" id="side-menu">
                        
                         <li>
-                            <a href="index.php"><i class="fa fa-table fa-fw"></i> Principal</a>
+                            <a href="index.php"><i class="fa fa-table fa-fw"></i>Principal</a>
                         </li>
  
                         <li>
@@ -71,7 +71,7 @@
                             <ul class="nav nav-second-level">
                                 <li><a class="linkForm" id="cliente" href="#">Cliente</a></li>
                                 <li><a class="linkForm" id="funcionario" href="#">Funcionário</a></li>
-                                <li><a class="linkForm" id="ordem_servico" href="#">Ordem de Serviço</a></li>
+                                <li><a class="linkForm" id="OrdemServico" href="#">Ordem de Serviço</a></li>
                            
                             <!-- /.nav-second-level -->
                         </li>
