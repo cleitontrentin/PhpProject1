@@ -42,8 +42,8 @@ class DaoCliente {
 
 	public function Alterar($model) {
 		/*Monta o Sql*/
-		$sql = "update cliente set nome = '" . $model->getNome() . "', endereco = '" 
-												. $model->getEndereco() . "', telefone = '" 
+		$sql = "update CLIENTE set NOME = '" . $model->getNome() . "', ENDERECO = '" 
+												. $model->getEndereco() . "', TELEFONE = '" 
 												. $model->getTelefone() . "' where idCLIENTE = " 
 												. $model->getIdCliente();
 		$this->executaSQL($sql);
@@ -95,26 +95,7 @@ class DaoCliente {
 
 	}
 
-	public function Login($model) {
-		/*Monta o Sql*/
-		$sql = "select * from cliente where login = '" . $model->getLogin() . "' and senha = '" . $model->getsenha() . "'";
 
-		/*Executando a consulta SQL*/
-		$result = $this->executaSQL($sql);
-
-		/*Obtém um linha do resultado como uma matriz associativa*/
-		if (mysql_fetch_assoc($result) == 0)
-		{
-			return 0;
-		}
-		else
-		{
-			/*Move o ponteiro interno do resultado*/
-			mysql_data_seek($result, 0);
-			return mysql_fetch_assoc($result);
-		}
-	   
-	}
 
 	private function executaSQL($sql) {
 		/*Executa o Sql*/

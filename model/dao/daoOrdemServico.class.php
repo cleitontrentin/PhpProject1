@@ -3,8 +3,8 @@
 /*incluindo o arquivo com as configurações do BD*/
 include_once("conexao.php");
 
-/*Classe de acesso a dados do Opcional*/
-class DaoOrdemServico {
+/*Classe de acesso a dados do Ordem Servico*/
+class DaoOrdemServico{
 
 	/*construtor da classe*/
 	public function DaoOrdemServico(){
@@ -14,23 +14,26 @@ class DaoOrdemServico {
 	/* função para gravar os dados */
 	public function Gravar($model) {
 		/*Monta o Sql*/
-		$sql = "insert into ordemservico (idCliente, idFuncionario, DTABERTURA, DTFECHAMENTO, VALOR) values ('"
-                      . $model->getIdCliente() . "', '"
-                      . $model->getIdFuncionario() . "')"
-                      . $model->getDtAbertura() . "')"
-                      . $model->getDtFechamento() . "')"
-                      . $model->getServico() . "')";
+		$sql = "insert into ORDEMSERVICO (DTABERTURA, VALOR, DTFECHAMENTO) values ('"
+                      . $model->geTDtAbertura()
+					  . "', '"
+						. $model->getValor()
+                      . "', '"
+						. $model->getDtFechamento()
+                      . "', '"
+			
+                      . "')";
 					  
 		/*Executando a consulta SQL*/
 		$this->executaSQL($sql);
 		
 		/*Obtém o ID gerado pela operação INSERT anterior*/
-		return mysql_affected_rows();
+		return mysql_insert_id();
 	}
 
 	public function Excluir($model) {
 		/*Monta o Sql*/
-		$sql = "delete from ordemservico where idORDEMSERVICO = '" . $model->getIdOrdemServico() . "' and IdCliente = '". $model->getIdCliente() . "'";
+		$sql = "delete from ORDEMSERVICO where iDORDEMSERVICO = " . $model->getIdOrdemServico();
 		$this->executaSQL($sql);
 		
 		/*Retorna quantos registros foram afetados com a instrução anterior*/
@@ -39,8 +42,11 @@ class DaoOrdemServico {
 
 	public function Alterar($model) {
 		/*Monta o Sql*/
-		$sql = "update idORDEMSERVICO set idORDEMSERVICO = '" . $model->getIdOrdemServico() . "', IdCliente = '" . $model->getIdCliente() ."'IdFuncionario = '".$model->getIdFuncionario(). 
-                        "' where idORDEMSERVICO= '" . $model->getIdOpcional() . "' and idORDEMSERVICO = '". $model->getIdOrdemServico() . "'";
+		$sql = "update ORDEMSERVICO set DTABERTURA = '" . $model->getDtAbertura() . "', DTFECHAMENTO = '" 
+ 											  . $model->getDtFechamento() . "', VALOR = '" 
+ 											  . $model->getValor() . "', ANO_FABRICACAO = '" 
+ 											  . $model->getFoto() . " ' where idORDEMSERVICO = " 
+ 											  . $model->getIdOrdemServico();
 											  
 		$this->executaSQL($sql);
 
@@ -50,7 +56,7 @@ class DaoOrdemServico {
 
 	public function Detalhe($model) {
 		/*Monta o Sql*/
-		$sql = "select * from ORDEMSERVICO where idORDEMSERVICO = '" . $model->getIdOrdemServico() . "' and idCliente = '". $model->getIdCliente() . "'and idFuncionario = '". $model->getIdFuncionario()."'";
+		$sql = "select * from ORDEMSERVICO where idORDEMSERVICO = " . $model->getIdOrdemServico();
 		$result = $this->executaSQL($sql);
 
 		/*Verifica se a consulta anterior retornou algum resultado*/
@@ -90,6 +96,8 @@ class DaoOrdemServico {
 		}
 
 	}
+
+	
 
 	private function executaSQL($sql) {
 		/*Executa o Sql*/

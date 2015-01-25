@@ -33,7 +33,7 @@ class CtrlOrdemServico
 		$objOrdemServico->setIdCliente($this->Verifica('txtCliente'));
 		$objOrdemServico->setDtAbertura($this->Verifica('txtDtAbertura'));
 		$objOrdemServico->setDtFechamento($this->Verifica('txtDtFechamento'));
-		$objOrdemServico->setServico($this->Verifica('txtValor'));
+		$objOrdemServico->setValor($this->Verifica('txtValor'));
 		
 		
 	}
@@ -105,8 +105,7 @@ class CtrlOrdemServico
 		$this->RequestForm($objOrdemServico);
 		
 		/*Enviando para o banco de dados*/
-//		$ListaObjetos[0] = $objdaoOrdemServico->ListarOpcional($objOrdemServico);		
-//		$ListaObjetos[1] = $objdaoOrdemServico->ListarTabela($objOrdemServico);		
+		
 		$retorno = $objdaoOrdemServico->Detalhe($objOrdemServico);
 
 		/*Criando objeto para mostrar o resultado*/

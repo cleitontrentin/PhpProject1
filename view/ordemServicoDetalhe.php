@@ -62,7 +62,7 @@
 
                     <div class="row">
                         <div class="col-lg-12" align="right">
-                            <input type="hidden" name="txtIdordemservico" id="txtIdVeiculo" value="<?= $_array["idORDEMSERVICO"] ?>" >
+                            <input type="hidden" name="txtIdordemservico" id="txtIdOrdemServico" value="<?= $_array["idORDEMSERVICO"] ?>" >
                             <input type="hidden" name="txtFormulario" id="txtFormulario" value="ordemservico" >
                             <input type="hidden" name="txtAcao" id="txtAcao" value="alterar">
                             <button tabindex="5" type="button" class="btn btn-default" id="btnEnviar">Salvar</button>
@@ -84,16 +84,7 @@
         <div class="panel panel-default">
 
             <!-- /.panel-heading -->
-            <div class="panel-body">
-                <div class="row" id="listaOpcionais">
 
-
-
-
-
-                </div>
-                <!-- /.row (nested) -->
-            </div>
             <!-- /.panel-body -->
         </div>
     </div>

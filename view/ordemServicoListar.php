@@ -1,5 +1,5 @@
     <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover" id="dataTables-veiculos">
+        <table class="table table-striped table-bordered table-hover" id="dataTables-ordemservio">
             <thead>
                 <tr>
                     <th>#</th>
@@ -43,7 +43,7 @@
     <script>
 
 		$(document).ready(function() {
-			$('#dataTables-veiculos').dataTable();
+			$('#dataTables-ordemservico').dataTable();
 		});
 
 		$(".btnAlterar").click(function(){
@@ -52,7 +52,7 @@
 					txtFormulario: 'ordemservico'
 					, txtAcao: 'detalhe'
 					//variaveis para o objeto
-					, txtIdVeiculo: this.id
+					, txtIdordemservico: this.id
 				}, function(responseTxt,statusTxt,xhr){
 				if(statusTxt=="error")
 					alert("Error: "+xhr.status+": "+xhr.statusText);
@@ -66,7 +66,7 @@
 						txtFormulario: 'ordemservico'
 						, txtAcao: 'excluir'
 						//variaveis para o objeto
-						, txtIdVeiculo: this.id
+						, txtIdordemservico: this.id
 					}, function(responseTxt,statusTxt,xhr){
 					if(statusTxt=="error")
 						alert("Error: "+xhr.status+": "+xhr.statusText);

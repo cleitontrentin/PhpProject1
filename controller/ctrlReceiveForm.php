@@ -55,7 +55,11 @@
 		/*verificando a sessão*/
 		include_once("ctrlSessao.php");
 		$objController->Pesquisa();
-   }
-	
+    }elseif ($acao == "login"){
+		$objController->Login();
+    }elseif ($acao == "upload"){
+		$objController->MostraTela(null);
+	}	
+		
 		
 ?>

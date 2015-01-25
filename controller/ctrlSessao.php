@@ -1,6 +1,6 @@
 <?php
 
-
+	session_start();
 	
 	if(isset($_SESSION["USUARIO_LOGADO"]) and !empty($_SESSION["USUARIO_LOGADO"])){
 		if($_SESSION["USUARIO_LOGADO"] == true){
@@ -10,6 +10,8 @@
 		}else{
 			header('location:../view/index.php');
 		}
+	}else{
+		header('location:../view/logon.php');
 	}
 	
 ?>

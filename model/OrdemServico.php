@@ -18,7 +18,7 @@ class OrdemServico {
     private $idCliente;
     private $dtAbertura;
     private $dtFechamento;
-    private $servico;
+    private $valor;
     private $status;
     private $desativado;
     
@@ -42,8 +42,8 @@ class OrdemServico {
         return $this->dtFechamento;
     }
 
-    public function getServico() {
-        return $this->servico;
+    public function getValor() {
+        return $this->valor;
     }
 
     public function getStatus() {
@@ -74,8 +74,8 @@ class OrdemServico {
         $this->dtFechamento = $dtFechamento;
     }
 
-    public function setServico($servico) {
-        $this->servico = $servico;
+    public function setValor($valor) {
+        $this->valor = $valor;
     }
 
     public function setStatus($status) {

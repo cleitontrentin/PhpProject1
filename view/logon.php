@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Painel adminstrativo</title>
+    <title>Locadora - Painel adminstrativo</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="../include/css/bootstrap.min.css" rel="stylesheet">
     <link href="../include/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- SB Admin CSS - Include with every page -->
-    <link href="../include/css/sb-index.css" rel="stylesheet">
+    <link href="../include/css/sb-admin.css" rel="stylesheet">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 
@@ -58,7 +58,7 @@
     <script src="../include/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
     <!-- SB Admin Scripts - Include with every page -->
-    <script src="../include/js/sb-index.js"></script>
+    <script src="../include/js/sb-admin.js"></script>
     
 	<script type="text/javascript">
 		$("#btnLogin").click(function(){

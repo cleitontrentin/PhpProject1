@@ -1,4 +1,4 @@
-<?
+<?php
 	/*verificando a sessão*/
 	include_once("../controller/ctrlSessao.php");
 ?>
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Entrar </title>
+    <title>Cliente</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="../include/css/bootstrap.min.css" rel="stylesheet">
@@ -46,10 +46,10 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-<!--                        <li><a href="#" id="detalheUsuario"><i class="fa fa-user fa-fw"></i> <?=$sLogin?> </a>
-                        </li>-->
+                        <li><a href="#" id="detalheUsuario"><i class="fa fa-user fa-fw"></i> <?=$sNome?> </a>
+                        </li>
                         <li class="divider"></li>
-                        <li><a href="../view/logon.php"><i class="fa fa-sign-out fa-fw"></i> Sair </a>
+                        <li><a href="../view/logoff.php"><i class="fa fa-sign-out fa-fw"></i> Sair </a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -61,20 +61,22 @@
             <div class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="side-menu">
-                       
+                      
                         <li>
-                            <a href="index.php"><i class="fa fa-table fa-fw"></i>Principal</a>
+                            <a href="index.php"><i class="fa fa-table fa-fw"></i> Principal</a>
                         </li>
- 
+                       
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastros Principais<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li><a class="linkForm" id="cliente" href="#">Cliente</a></li>
                                 <li><a class="linkForm" id="funcionario" href="#">Funcionário</a></li>
-                                <li><a class="linkForm" id="OrdemServico" href="#">Ordem de Serviço</a></li>
-                           
+                                <li><a class="linkForm" id="ordemservico" href="#">Ordem de Serviço</a></li>
+                               
+                            </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                   
                     </ul>
                     <!-- /#side-menu -->
                 </div>
@@ -121,7 +123,20 @@
 					alert("Error: "+xhr.status+": "+xhr.statusText);
 			});
 		});	
-
+/*
+		$("#detalheUsuario").click(function(){
+			$("#conteudoForm").load("../controller/ctrlReceiveForm.php" ,{
+					//variaveis de controle
+					txtFormulario: 'funcionario'
+					, txtAcao: 'detalhe'
+					//variaveis para o objeto
+					, txtIdFuncionario: '<? //$sIdFuncionario ?>'
+				}, function(responseTxt,statusTxt,xhr){
+				if(statusTxt=="error")
+					alert("Error: "+xhr.status+": "+xhr.statusText);
+			});
+		});	
+		*/
     </script>
 
 
