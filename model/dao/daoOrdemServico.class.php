@@ -62,7 +62,7 @@ class DaoOrdemServico{
 		/*Verifica se a consulta anterior retornou algum resultado*/
 		if (mysql_fetch_assoc($result) == 0)
 		{
-			return 0;
+			return -1;
 		}
 		else
 		{

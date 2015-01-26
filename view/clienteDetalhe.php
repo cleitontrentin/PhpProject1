@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-edit fa-fw"></i> Alterar Cliente
+                            <i class="fa fa-edit fa-fw"></i> Alteração de cliente
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -22,13 +22,13 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Endereço</label>
-                                            <input tabindex="3" class="form-control" placeholder="Informe seu Endereço" type="text" id="txtEndereco" name="txtEndereco" value="<?=$_array["ENDERECO"]?>">
+                                            <input tabindex="3" class="form-control" placeholder="Informe o seu endereço" type="text" id="txtEndereco" name="txtendereco" value="<?=$_array["ENDERECO"]?>">
                                         </div>
                                 </div>
                                 <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Telefone</label>
-                                            <input tabindex="2" class="form-control" placeholder="Informe seu telefone" type="text" id="txtTelefone" name="txtTelefone" value="<?=$_array["TELEFONE"]?>">
+                                            <input tabindex="2" class="form-control" placeholder="Informe um telefone" type="text" id="txtTelefone" name="txtTelefone" value="<?=$_array["TELEFONE"]?>">
                                         </div>
                                 </div>
                                 <div class="col-lg-12" align="right">
@@ -65,9 +65,8 @@
 					//variaveis para o objeto
 					, txtIdCliente: document.forms["formAtual"].elements["txtIdCliente"].value
 					, txtNome: document.forms["formAtual"].elements["txtNome"].value
-                                        , txTelefone: document.forms["formAtual"].elements["txtTelefone"].value
 					, txtEndereco: document.forms["formAtual"].elements["txtEndereco"].value
-					
+					, txtTelefone: document.forms["formAtual"].elements["txtTelefone"].value
 				}, function(responseTxt,statusTxt,xhr){
 				if(statusTxt=="error")
 					alert("Error: "+xhr.status+": "+xhr.statusText);
