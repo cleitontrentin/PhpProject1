@@ -1,24 +1,25 @@
     <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover" id="dataTables-ordemservio">
+        <table class="table table-striped table-bordered table-hover" id="dataTables-ordemServicos">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>dtAbertura</th>
-                    <th>dtFechamento</th>
-                    <th>valor</th>
+                    <th>Valor</th>
+                    <th>Data Abertura</th>
+                    <th>Data Fechamento</th>
+                    
                     <th width="160px">Acao</th>
                 </tr>
             </thead>
             <tbody>
 <?php
-			while  ($_array = mysql_fetch_assoc($result))
+			while ($_array = mysql_fetch_assoc($result))
 			{
 ?>	
                 <tr class="odd gradeX">
                     <td><?=$_array['idORDEMSERVICO']?></td>
+                    <td><?=$_array['VALOR']?></td>
                     <td><?=$_array['DTABERTURA']?></td>
                     <td><?=$_array['DTFECHAMENTO']?></td>
-                    <td><?=$_array['VALOR']?></td>
                     <td>
                     	<a href="#" class="btnAlterar" id="<?=$_array['idORDEMSERVICO']?>">
                         	<i class="fa fa-edit fa-fw"></i>Detalhe
@@ -43,7 +44,7 @@
     <script>
 
 		$(document).ready(function() {
-			$('#dataTables-ordemservico').dataTable();
+			$('#dataTables-ordemServicos').dataTable();
 		});
 
 		$(".btnAlterar").click(function(){
@@ -52,7 +53,7 @@
 					txtFormulario: 'ordemservico'
 					, txtAcao: 'detalhe'
 					//variaveis para o objeto
-					, txtIdordemservico: this.id
+					, txtIdOrdemServico: this.id
 				}, function(responseTxt,statusTxt,xhr){
 				if(statusTxt=="error")
 					alert("Error: "+xhr.status+": "+xhr.statusText);
@@ -66,7 +67,7 @@
 						txtFormulario: 'ordemservico'
 						, txtAcao: 'excluir'
 						//variaveis para o objeto
-						, txtIdordemservico: this.id
+						, txtIdOrdemServico: this.id
 					}, function(responseTxt,statusTxt,xhr){
 					if(statusTxt=="error")
 						alert("Error: "+xhr.status+": "+xhr.statusText);

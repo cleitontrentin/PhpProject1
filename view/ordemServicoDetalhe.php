@@ -1,3 +1,8 @@
+
+
+
+
+
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Ordem de Serviço</h1>
@@ -18,51 +23,31 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label>Data Abertura</label>
-                                <input class="form-control" placeholder="Informe a data de Inicio " type="text" id="txtDtAbertura" name="txtDtAbertura" value="<?= $_array["DTABERTURA"] ?>">
+                                <label>valor</label>
+                                <input class="form-control" placeholder="Informe o valor" type="text" id="txtValor" name="txtValor" value="<?= $_array["VALOR"] ?>">
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>Data Fechamento</label>
-                                <input class="form-control" placeholder="Informe o modelo do veículo" type="text" id="txtDtFechamento" name="txtDtFechamento" value="<?= $_array["DTFECHAMENTO"] ?>">
-                            </div>
-                        </div>
+
                     </div>
                     <div class="row">
+
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label>Valor</label>
-                                <input class="form-control" placeholder="informe a Placa" type="text" id="txtPlaca" name="txtValor" value="<?= $_array["VALOR"] ?>">
+                                <label>Data Abertura</label>
+                                <input class="form-control" placeholder="informe a Data de Abertura" type="text" id="calendario" name="txtDtAbertura" value="<?= $_array["DTABERTURA"] ?>">
                             </div>
                         </div>
-
-
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <label>Selecione</label>
-                                <select class="form-control" placeholder="informe o tipo"  id="txtCombustivel" name="txtSelecione">
-                                    <option value="CLIENTE" <?php
-                                    if ($_array["SELECIONE"] == "CLIENTE") {
-                                        echo 'selected="selected"';
-                                    }
-                                    ?> >CLIENTE</option>
-                                    <option value="FUNCIONARIO" <?php
-                                    if ($_array["SELECIONE"] == "FUNCIONARIO") {
-                                        echo 'selected="selected"';
-                                    }
-                                    ?> >FUNCIONARIO</option>
-                                </select>
-
+                                <label>Data Fechamento</label>
+                                <input class="form-control" placeholder="informe a Data de Fechamento" type="text" id="calendario" name="txtDtFechamento" value="<?= $_array["DTFECHAMENTO"] ?>">
                             </div>
                         </div>
                     </div>
-
-
 
                     <div class="row">
                         <div class="col-lg-12" align="right">
-                            <input type="hidden" name="txtIdordemservico" id="txtIdOrdemServico" value="<?= $_array["idORDEMSERVICO"] ?>" >
+                            <input type="hidden" name="txtIdOrdemServico" id="txtIdOrdemServico" value="<?= $_array["idORDEMSERVICO"] ?>" >
                             <input type="hidden" name="txtFormulario" id="txtFormulario" value="ordemservico" >
                             <input type="hidden" name="txtAcao" id="txtAcao" value="alterar">
                             <button tabindex="5" type="button" class="btn btn-default" id="btnEnviar">Salvar</button>
@@ -79,27 +64,14 @@
 </div>
 <!-- /.row -->
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
 
-            <!-- /.panel-heading -->
-
-            <!-- /.panel-body -->
-        </div>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
 <!-- /.row -->
 
-<!-- /.row (nested) -->
-</div>
-<!-- /.panel-body -->
-</div>
-</div>
-<!-- /.col-lg-12 -->
-</div>
+
 <!-- /.row -->
+
+
+
 
 
 
@@ -108,7 +80,10 @@
 
 
 <script type="text/javascript">
-   
+
+$(function() {
+    $( "#calendario" ).datepicker();
+});
 
     $("#btnEnviar").click(function() {
         $("#alertForm").load("/locadora/controller/ctrlReceiveForm.php", {
@@ -116,7 +91,7 @@
             txtFormulario: document.forms["formAtual"].elements["txtFormulario"].value
             , txtAcao: document.forms["formAtual"].elements["txtAcao"].value
                     //variaveis para o objeto
-            , txtIdOrdemServico: document.forms["formAtual"].elements["txtIdordemServico"].value
+            , txtIdOrdemServico: document.forms["formAtual"].elements["txtIdOrdemServico"].value
             , txtValor: document.forms["formAtual"].elements["txtValor"].value
             , txtDtAbertura: document.forms["formAtual"].elements["txtDtAbertura"].value
             , txtDtFechamento: document.forms["formAtual"].elements["txtDtFechamento"].value

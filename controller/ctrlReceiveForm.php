@@ -2,7 +2,7 @@
 	/*Incluindo a classe de controle do Funcionário*/
 	include_once("ctrlCliente.class.php");
 	include_once("ctrlFuncionario.class.php");
-	include_once("ctrlOrdemServico.class.php");
+	include_once("./ctrlOrdemServico.class.php");
 	
 
 	//importando o controller referente ao controle de saída de informação
