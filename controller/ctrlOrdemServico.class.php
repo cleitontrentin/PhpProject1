@@ -102,8 +102,8 @@ class CtrlOrdemServico {
         $this->RequestForm($objOrdemServico);
 
         /* Enviando para o banco de dados */
-        $ListaObjetos[0] = $objDaoOrdeservico->ListarCliente($objOrdemServico);
-        $ListaObjetos[1] = $objDaoOrdeservico->ListarVeiculo($objOrdemServico);
+//        $ListaObjetos[0] = $objDaoOrdeservico->ListarCliente($objOrdemServico);
+//        $ListaObjetos[1] = $objDaoOrdeservico->ListarVeiculo($objOrdemServico);
         $retorno = $objDaoOrdeservico->Detalhe($objOrdemServico);
 
         /* Criando objeto para mostrar o resultado */
@@ -111,7 +111,7 @@ class CtrlOrdemServico {
 
         /* Verificado o resultado do processamento */
         if ($retorno > 0) {
-            $objSendForm->MostraTela($objOrdemServico, $retorno, $ListaObjetos);
+            $objSendForm->MostraTela($objOrdemServico, $retorno);
         } else {
             $objSendForm->mostraMsg("ERRO", "Detalhe Ordem de Serviço", "Erro ao localizar Ordem de Serviço, por favor, tente novamente!");
         }

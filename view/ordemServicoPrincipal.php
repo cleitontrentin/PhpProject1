@@ -1,4 +1,4 @@
-<div class="row">
+   <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Ordem de Serviço</h1>
     </div>
@@ -69,6 +69,18 @@
                                 <input class="form-control" placeholder="informe a Data de Término" type="text" id="data" name="txtDtFechamento">
                             </div>
                         </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label>Cliente</label>
+                               <input type="checkbox" name="txtCliente" id="txtIdCliente">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                <label>Funcionário</label>
+                               <input type="checkbox" name="txtFuncionario" id="txtIdFuncionario">
+                            </div>
+                        </div>
 
 
                     </div>
@@ -104,7 +116,26 @@
             if (statusTxt == "error")
                 alert("Error: " + xhr.status + ": " + xhr.statusText);
         });
+        $("#txtData").datepicker({
+            format: 'dd/mm/yyyy'
+            
+        });
+        
+
+        loadComboCartao();
     });
+
+
+    function loadComboCartao() {
+        $("#comboCartao").load("servlet", {
+            //variaveis de controle
+            txtObjeto: 'cliente'
+            , txtMetodo: 'combo'
+        }, function(responseTxt, statusTxt, xhr) {
+            if (statusTxt == "error")
+                alert("Error: " + xhr.status + ": " + xhr.statusText);
+        });
+    }
 
 
     $("#btnEnviar").click(function() {
@@ -116,6 +147,8 @@
             , txtValor: document.forms["formAtual"].elements["txtValor"].value
             , txtDtAbertura: document.forms["formAtual"].elements["txtDtAbertura"].value
             , txtDtFechamento: document.forms["formAtual"].elements["txtDtFechamento"].value
+            , txtIdCliente: document.forms["formAtual"].elements["txtIdCliente"].value
+            , txtIdFuncionario: document.forms["formAtual"].elements["txtIdFuncionario"].value
             
         }, function(responseTxt, statusTxt, xhr) {
             if (statusTxt == "error")

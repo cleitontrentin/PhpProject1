@@ -1,5 +1,6 @@
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover" id="dataTables-clientes">
+            
             <thead>
                 <tr>
                     <th>#</th>
@@ -43,7 +44,7 @@
     <script>
 
 		$(document).ready(function() {
-			$('#dataTables-veiculos').dataTable();
+			$('#dataTables-clientes').dataTable();
 
 		});
 

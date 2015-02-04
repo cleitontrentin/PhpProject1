@@ -81,10 +81,6 @@
 
 <script type="text/javascript">
 
-$(function() {
-    $( "#calendario" ).datepicker();
-});
-
     $("#btnEnviar").click(function() {
         $("#alertForm").load("/locadora/controller/ctrlReceiveForm.php", {
             //variaveis de controle

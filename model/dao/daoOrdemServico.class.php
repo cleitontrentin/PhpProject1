@@ -65,7 +65,7 @@ class DaoOrdemServico {
 
     public function Detalhe($model) {
         /* Monta o Sql */
-        $sql = "select * from ORDEEMSERVICO where idORDEMSERVICO = " . $model->geidORDEMSERVICO();
+        $sql = "select * from ORDEMSERVICO where idORDEMSERVICO = " . $model->getidORDEMSERVICO();
         $result = $this->executaSQL($sql);
 
         /* Verifica se a consulta anterior retornou algum resultado */
