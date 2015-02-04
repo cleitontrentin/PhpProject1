@@ -11,7 +11,7 @@
  *
  * @author Iasoft7
  */
-class Funcionario {
+class Funcionario extends OrdemServico {
     //put your code here
     
     private $idFuncionario;

@@ -59,6 +59,19 @@
 					alert("Error: "+xhr.status+": "+xhr.statusText);
 			});
 		});
+                $(".btnAlterar").click(function(){
+			$("#conteudoForm").load("../controller/ctrlReceiveForm.php" ,{
+					//variaveis de controle
+					txtFormulario: 'cliente'
+					, txtAcao: 'detalhe'
+					//variaveis para o objeto
+					, txtIdCliente: this.id
+				}, function(responseTxt,statusTxt,xhr){
+				if(statusTxt=="error")
+					alert("Error: "+xhr.status+": "+xhr.statusText);
+			});
+		});
+
 
 		$(".btnExcluir").click(function(){
 			if(confirm('Deseja realmente excluir o registro?')){

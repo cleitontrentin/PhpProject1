@@ -11,7 +11,7 @@
  *
  * @author Iasoft7
  */
-class cliente {
+class cliente extends OrdemServico{
     //put your code here
     private $idCliente;
     private $nome;
